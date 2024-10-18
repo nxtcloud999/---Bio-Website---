@@ -1,0 +1,578 @@
+body {
+    margin: 0;
+    height: 100vh;
+    overflow: hidden;
+    cursor: none;
+    user-select: none;
+}
+
+.trail-image {
+    position: absolute;
+    width: 1.8519vmin;
+    height: 1.8519vmin;
+    pointer-events: none;
+}
+
+.custom-cursor {
+    position: absolute;
+    width: 1.8519vmin;
+    height: 1.8519vmin;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.parallax-container {
+    perspective: 1000px;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 500ms;
+
+}
+
+.parallax-card {
+    width: 500px;
+    height: 470px;
+    background-image: url('https://source.unsplash.com/300x400/?nature');
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 73, 121, 0.11);
+    transform-style: preserve-3d;
+    transition: transform 0.9s;
+    position: relative;
+    border: 0.3vh solid rgba(0, 73, 121, 0.11);
+    background-color: radial-gradient(111.63% 111.63% at 90% 90%, rgb(0, 0, 0) 20%, rgb(0, 27, 63) 100%);
+
+}
+
+
+
+
+.banner {
+    position: absolute;
+    width: 100%;
+    height: 150px;
+    top: 0%;
+    border-radius: 15px;
+    z-index: 99;
+    border-bottom: 0.3vh solid rgba(0, 73, 121, 0.11);
+}
+
+.pb {
+    position: absolute;
+    width: 102px;
+    height: 100px;
+    top: 33%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    z-index: 99;
+    border: 0.3vh solid rgba(0, 73, 121, 0.719);
+}
+
+
+.name {
+    position: absolute;
+    top: 53%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    font-family: "Arimo", sans-serif;
+    font-weight: 400;
+    font-size: 3vh;
+    color: rgb(116, 116, 116);
+    text-shadow: 0px 0px 18.7px #FFFFFF;
+}
+
+.vieverbox {
+    display: inline-block;
+    padding-left: 3vh;
+    padding-right: 0.5vh;
+    padding-top: 0.3vh;
+    padding-bottom: 0.3vh;
+    border: 0.3vh solid rgba(0, 73, 121, 0.11);
+
+    border-radius: 1vh;
+
+    font-family: "Arimo", sans-serif;
+    font-weight: 400;
+    font-size: 1.5vh;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    top: 35%;
+    left: 2%;
+    transform: translate(left);
+
+
+}
+
+.views {
+    position: absolute;
+    width: 2vh;
+    height: 2.5vh;
+    left: 4%;
+    top: -4%;
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 34%;
+    transform: translate(-50%, -50%);
+}
+
+.name {
+    font-size: 30px;
+    color: white;
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    animation: melt 5s ease-in-out infinite alternate;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+@keyframes melt {
+    0% {
+        transform: none;
+    }
+
+    50% {
+        transform: skewY(5deg) scaleY(1.1);
+    }
+
+    100% {
+        transform: skewY(-5deg) scaleY(1);
+    }
+}
+
+
+.droplet {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background-color: white;
+    border-radius: 50%;
+    opacity: 0;
+    animation: droplet-fall 2s forwards ease-in-out;
+}
+
+@keyframes droplet-fall {
+    0% {
+        transform: translateY(0);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateY(150px) scale(1.5);
+        opacity: 0;
+    }
+}
+
+.video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.blur-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.closedscreen {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backdrop-filter: blur(20px);
+    z-index: 1;
+    background-color: rgba(0, 0, 0, 0.863);
+}
+
+.clickherebox {
+    position: absolute;
+    width: 17vh;
+    height: 5vh;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    user-select: none;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+
+@keyframes pulse {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+
+    50% {
+        transform: translate(-50%, -50%) scale(1.05);
+    }
+
+    100% {
+        transform: translate(-50%, -50%) scale(1);
+    }
+}
+
+.dingledonglsvg {
+    position: absolute;
+    top: 50%;
+    left: 7%;
+    transform: translate(-50%, -50%);
+    width: 50%;
+    height: 51%;
+    animation: rotate 5s infinite;
+
+}
+
+
+
+
+.text {
+    position: absolute;
+    color: rgba(255, 255, 255, 0.658);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 1.8519vmin;
+
+
+    top: 50%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+}
+
+.trail-image {
+    position: absolute;
+    width: 1.8519vmin;
+    height: 1.8519vmin;
+    pointer-events: none;
+}
+
+.custom-cursor {
+    position: absolute;
+    width: 1.8519vmin;
+    height: 1.8519vmin;
+    pointer-events: none;
+    z-index: 9999;
+}
+
+.sky {
+
+    position: absolute;
+    width: 98%;
+    height: 98%;
+}
+
+#progress-bar-container {
+    width: 70%;
+    height: 5px;
+    background-color: grey;
+    position: relative;
+    margin-top: 20px;
+    position: absolute;
+
+
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#progress-bar {
+    height: 100%;
+    background-color: white;
+    width: 0%;
+}
+
+#progress-marker {
+    height: 12px;
+    width: 2px;
+    background-color: white;
+    position: absolute;
+    top: -4.5px;
+    right: 0;
+}
+
+.progbarbg {
+    position: absolute;
+    width: 460px;
+    height: 50px;
+    background: linear-gradient(90deg, rgba(115, 115, 115, 0.02) 6.69%, #ffffff41 50%, rgba(115, 115, 115, 0.02) 93.76%);
+
+    top: 62%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.title {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.637);
+    top: 30%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+}
+
+.time {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 15px;
+    position: absolute;
+    color: rgba(255, 255, 255, 0.637);
+    top: 30%;
+    left: 77%;
+    transform: translate(-50%, -50%);
+}
+
+.controlbar {
+    position: absolute;
+    width: 460px;
+    height: 50px;
+    background: linear-gradient(90deg, rgba(115, 115, 115, 0.02) 6.69%, #ffffff41 50%, rgba(115, 115, 115, 0.02) 93.76%);
+
+    top: 75%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#volume-control {
+    margin-top: 20px;
+    position: absolute;
+    top: 10%;
+    left: 55%;
+    transform: translate(-50%, -50%);
+}
+
+input[type="range"] {
+    width: 200px;
+    height: 8px;
+
+    margin: -10px 0;
+
+    background: grey;
+
+    -webkit-appearance: none;
+
+
+
+    overflow: hidden;
+
+}
+
+input[type="range"]::-webkit-slider-thumb {
+    -webkit-appearance: none;
+
+    appearance: none;
+
+    width: 20px;
+
+    height: 20px;
+
+
+
+    background: white;
+
+    cursor: pointer;
+
+    margin-top: -5px;
+
+    border: 2px solid white;
+
+}
+
+input[type="range"]::-moz-range-thumb {
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 5px;
+
+    background: white;
+
+    cursor: pointer;
+
+    border: 2px solid white;
+
+}
+
+input[type="range"]::-ms-thumb {
+    width: 20px;
+
+    height: 20px;
+
+    border-radius: 5px;
+
+    background: white;
+
+    cursor: pointer;
+
+    border: 2px solid white;
+
+}
+
+input[type="range"]::-webkit-slider-runnable-track {
+    background: grey;
+
+    border-radius: 5px;
+
+    height: 10px;
+
+}
+
+input[type="range"]::-moz-range-track {
+    background: grey;
+
+    border-radius: 5px;
+
+    height: 10px;
+
+}
+
+input[type="range"]::-ms-track {
+    background: grey;
+
+    border-radius: 5px;
+
+    height: 10px;
+
+    border: none;
+
+    color: transparent;
+
+}
+
+
+.volume-track {
+    width: 0%;
+    height: 10px;
+    background: white;
+    border-radius: 5px;
+}
+
+.leisesvg {
+
+    position: absolute;
+    top: 52%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+}
+
+.lautsvg {
+
+    position: absolute;
+    top: 52%;
+    left: 80.5%;
+    transform: translate(-50%, -50%);
+}
+
+.playpause {
+    position: absolute;
+    width: 1.82292vw;
+    height: 1.82292vw;
+    border-radius: 0.20833vw;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    top: 51%;
+    left: 18%;
+    transform: translate(-50%, -50%);
+}
+
+.pause {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+}
+
+.play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: none;
+}
+
+.links {
+    position: absolute;
+    width: 460px;
+    height: 50px;
+    background: linear-gradient(90deg, rgba(115, 115, 115, 0.02) 6.69%, #ffffff41 50%, rgba(115, 115, 115, 0.02) 93.76%);
+
+    top: 88.5%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.github {
+    position: absolute;
+    width: 2.3vw;
+    height: 83%;
+    border-radius: 0.20833vw;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    top: 50%;
+    left: 57%;
+    transform: translate(-50%, -50%);
+}
+
+.logoort {
+    position: absolute;
+    width: 79%;
+    height: 80%;
+    left: 10%;
+    top: 10%;
+    border-radius: 1vw;
+    background-color: rgba(0, 0, 0, 0.637);
+}
+
+.githublogo {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.discordlogo {
+
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.discord {
+    position: absolute;
+    width: 2.3vw;
+    height: 83%;
+    border-radius: 0.20833vw;
+    background: rgba(255, 255, 255, 0.1);
+    transition: 0.3s;
+    top: 50%;
+    left: 43%;
+    transform: translate(-50%, -50%);
+}

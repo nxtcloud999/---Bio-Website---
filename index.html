@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="de">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title id="title">made by nxtcloud999</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Arimo:ital,wght@0,400..700;1,400..700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <audio id="audio" src="./img/song.mp3" preload="auto"></audio>
+    <div id="closedscreen" class="closedscreen">
+        <canvas class="sky" id="sky" style="position: absolute;"></canvas>
+        <div class="clickherebox">
+            <svg class="dingledonglsvg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M20.9597 17.84L19.3297 18.39C18.8797 18.54 18.5197 18.89 18.3697 19.35L17.8197 20.98C17.3497 22.39 15.3697 22.36 14.9297 20.95L13.0797 15C12.7197 13.82 13.8097 12.72 14.9797 13.09L20.9397 14.94C22.3397 15.38 22.3597 17.37 20.9597 17.84Z"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                <path opacity="0.4" d="M22 12C22 6.48 17.52 2 12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22"
+                    stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+            </svg>
+            <div class="text">Click to reveal...</div>
+        </div>
+
+
+
+    </div>
+
+    <video class="video-background" autoplay muted loop>
+        <source src="./img/bgfootage.mp4" type="video/mp4">
+    </video>
+    <div class="blur-overlay"></div>
+
+    <div class="parallax-container">
+        <div class="parallax-card">
+            <img draggable="false" class="banner" src="./img/609fc0575677650484cdde6619937d2d.gif" alt="banner">
+            <img draggable="false" class="pb" src="./img/R.jpg" alt="123">
+            <div class="vieverbox">
+                <img draggable="false" class="views" src="./img/views.png" alt="">
+
+                <span id="views">Loading...</span>
+            </div>
+            <div class="container">
+                <div class="name">nxtcloud999</div>
+            </div>
+
+
+            <div id="progbarbg" class="progbarbg">
+                <div class="time"><span id="current-time">00:00</span> / <span>3:06</span></div>
+                <div class="title">Rapstar</div>
+                <div id="progress-bar-container">
+                    <div id="progress-bar"></div>
+                    <div id="progress-marker"></div>
+                </div>
+
+            </div>
+
+            <div class="controlbar">
+
+                <div id="volume-control">
+                    <input id="volume-range" type="range" min="0" max="1" step="0.01" value="0.5">
+                </div>
+
+
+                <svg class="leisesvg" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M2.63623 7.91658V11.0832C2.63623 12.6666 3.4279 13.4582 5.01123 13.4582H6.14331C6.43623 13.4582 6.72915 13.5453 6.98248 13.6957L9.29415 15.1445C11.2891 16.3953 12.9279 15.4849 12.9279 13.1337V5.86616C12.9279 3.507 11.2891 2.6045 9.29415 3.85533L6.98248 5.30408C6.72915 5.4545 6.43623 5.54158 6.14331 5.54158H5.01123C3.4279 5.54158 2.63623 6.33325 2.63623 7.91658Z"
+                        stroke="white" stroke-width="1.5"></path>
+                    <path opacity="0.4" d="M15.303 6.33325C16.7121 8.2095 16.7121 10.7903 15.303 12.6666" stroke="white"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+
+                <svg class="lautsvg" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M1.58325 7.91658V11.0832C1.58325 12.6666 2.37492 13.4582 3.95825 13.4582H5.09034C5.38325 13.4582 5.67617 13.5453 5.9295 13.6957L8.24117 15.1445C10.2362 16.3953 11.8749 15.4849 11.8749 13.1337V5.86616C11.8749 3.507 10.2362 2.6045 8.24117 3.85533L5.9295 5.30408C5.67617 5.4545 5.38325 5.54158 5.09034 5.54158H3.95825C2.37492 5.54158 1.58325 6.33325 1.58325 7.91658Z"
+                        stroke="white" stroke-width="1.5"></path>
+                    <path opacity="0.4" d="M14.25 6.33325C15.6592 8.2095 15.6592 10.7903 14.25 12.6666" stroke="white"
+                        stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    <path opacity="0.4" d="M15.6987 4.35425C17.9866 7.40216 17.9866 11.598 15.6987 14.6459"
+                        stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                </svg>
+
+                <div id="playpause" class="playpause">
+
+                    <svg id="play" class="play" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M3.16675 9.49994V6.6816C3.16675 3.18244 5.64466 1.74952 8.67675 3.4991L11.123 4.90827L13.5692 6.31744C16.6013 8.06702 16.6013 10.9329 13.5692 12.6824L11.123 14.0916L8.67675 15.5008C5.64466 17.2504 3.16675 15.8174 3.16675 12.3183V9.49994Z"
+                            stroke="white" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round"
+                            stroke-linejoin="round"></path>
+                    </svg>
+
+
+                    <svg id="pause" class="pause" width="19" height="19" viewBox="0 0 19 19" fill="none"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path opacity="0.4"
+                            d="M8.43125 15.1288V3.87125C8.43125 2.8025 7.98 2.375 6.84 2.375H3.96625C2.82625 2.375 2.375 2.8025 2.375 3.87125V15.1288C2.375 16.1975 2.82625 16.625 3.96625 16.625H6.84C7.98 16.625 8.43125 16.1975 8.43125 15.1288Z"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                        <path
+                            d="M16.6251 15.1288V3.87125C16.6251 2.8025 16.1738 2.375 15.0338 2.375H12.1601C11.028 2.375 10.5688 2.8025 10.5688 3.87125V15.1288C10.5688 16.1975 11.0201 16.625 12.1601 16.625H15.0338C16.1738 16.625 16.6251 16.1975 16.6251 15.1288Z"
+                            stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path>
+                    </svg>
+
+                </div>
+            </div>
+
+            <div class="links">
+
+                <div id="github" class="github">
+
+                    <div class="logoort">
+
+                        <img draggable="false" class="githublogo" src="./img/github.png" alt="">
+
+                    </div>
+
+                </div>
+
+                <div id="discord" class="discord">
+
+                    <div class="logoort">
+
+                        <img draggable="false" class="discordlogo" src="./img/discord.png" alt="">
+
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    </div>
+
+    <img draggable="false" draggable="false" src="https://nxtcloud999.isfucking.pro/8ptwsy.png" class="custom-cursor"
+        id="customCursor" alt="Custom Cursor">
+    <script>
+
+
+        const text = "! .nxtcloud999";
+        const titleElement = document.getElementById("title");
+        let index = 0;
+        let isDeleting = false;
+
+        function type() {
+            const currentText = text.substring(0, index);
+            titleElement.textContent = currentText || "!";
+
+            if (isDeleting) {
+                index--;
+                if (index < 0) {
+                    isDeleting = false;
+                    index = 0;
+                    setTimeout(type, 1500);
+                    return;
+                }
+            } else {
+                index++;
+                if (index > text.length) {
+                    isDeleting = true;
+                    setTimeout(type, 1500);
+                    return;
+                }
+            }
+
+
+            const speed = isDeleting ? 300 : 400;
+            setTimeout(type, speed);
+        }
+
+        type();
+
+        document.getElementById("github").onclick = function () {
+            window.open("https://github.com/nxtcloud999", "_blank");
+        }
+
+        document.getElementById("discord").onclick = function () {
+            window.open("https://discord.gg/wavecl", "_blank");
+        }
+
+        $(document).ready(function () {
+            var audio = $('#audio')[0];
+            var progressBar = $('#progress-bar');
+            var progressMarker = $('#progress-marker');
+            var currentTimeDisplay = $('#current-time');
+            var isPaused = false;
+
+            $(document).ready(function () {
+                const audio = document.getElementById('audio');
+                let isPaused = true;
+
+                $('#playpause').click(function () {
+                    if (audio.paused) {
+                        audio.play();
+                        isPaused = false;
+                        $('.play').fadeOut(200);
+                        $('.pause').fadeIn(200);
+                    } else {
+                        audio.pause();
+                        isPaused = true;
+                        $('.pause').fadeOut(200);
+                        $('.play').fadeIn(200);
+                    }
+                });
+            });
+
+            function formatTime(seconds) {
+                var minutes = Math.floor(seconds / 60);
+                var seconds = Math.floor(seconds % 60);
+                return (minutes < 10 ? '0' : '') + minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+            }
+
+            $("#closedscreen").click(function () {
+                $(this).fadeOut(1500);
+                $('#parallax-container').fadeIn(1500);
+                audio.play();
+            });
+
+            audio.addEventListener('timeupdate', function () {
+                var progress = (audio.currentTime / audio.duration) * 100;
+                progressBar.css('width', progress + '%');
+
+
+                progressMarker.css('right', (100 - progress) + '%');
+
+
+                currentTimeDisplay.text('' + formatTime(audio.currentTime));
+            });
+
+
+            $('#volume-range').on('input', function () {
+                audio.volume = $(this).val();
+            });
+        });
+
+        var myStorage = window.localStorage;
+        var pageCount;
+
+        window.addEventListener('load', function () {
+            if (!myStorage.getItem("pageCount")) {
+                myStorage.setItem('pageCount', 1);
+            } else {
+                pageCount = parseInt(myStorage.getItem("pageCount"), 10);
+                pageCount += 1;
+                myStorage.setItem('pageCount', pageCount);
+            }
+
+
+            document.getElementById('views').textContent = myStorage.getItem("pageCount");
+        });
+
+        $(document).ready(function () {
+            var audio = $('#audio')[0];
+            $("#closedscreen").click(function () {
+                $(this).fadeOut(1500);
+                $('parallax-container').fadeIn(1500);
+                audio.play();
+            });
+        });
+
+
+        const card = document.querySelector('.parallax-card');
+
+        card.addEventListener('mousemove', (e) => {
+            const rect = card.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const y = e.clientY - rect.top;
+            const centerX = rect.width / 2;
+            const centerY = rect.height / 2;
+
+
+            const deltaX = (x - centerX) / centerX;
+            const deltaY = (y - centerY) / centerY;
+
+
+            const maxTilt = 20;
+
+
+            const rotateX = deltaY * maxTilt;
+            const rotateY = deltaX * -maxTilt;
+
+
+            card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+        });
+
+        card.addEventListener('mouseleave', () => {
+
+            card.style.transform = 'rotateX(0deg) rotateY(0deg)';
+        });
+
+
+
+
+        $(document).ready(function () {
+            let lastSpawnTime = 0;
+            const interval = 15;
+            const fadeoutTime = 300;
+            $(document).on("mousemove", function (event) {
+                const currentTime = new Date().getTime();
+                if (currentTime - lastSpawnTime >= interval) {
+                    lastSpawnTime = currentTime;
+                    const $img = $('<img src="https://nxtcloud999.isfucking.pro/8ptwsy.png" class="trail-image">');
+                    $img.css({
+                        top: event.pageY + "px",
+                        left: event.pageX + "px",
+                        opacity: 1
+                    });
+                    $('body').append($img);
+                    $img.delay(fadeoutTime).fadeOut(500, function () {
+                        $(this).remove();
+                    });
+                }
+            });
+
+            $(document).on("mousemove", function (event) {
+                $('#customCursor').css({
+                    top: event.pageY + "px",
+                    left: event.pageX + "px"
+                });
+            });
+        });
+
+
+
+        const nameElement = document.querySelector('.name');
+
+        function createDroplet() {
+            const droplet = document.createElement('div');
+            droplet.classList.add('droplet');
+
+            const randomX = Math.random() * nameElement.offsetWidth;
+            droplet.style.left = `${randomX}px`;
+
+
+            droplet.style.top = `${nameElement.offsetHeight}px`;
+
+            nameElement.appendChild(droplet);
+
+
+            setTimeout(() => {
+                droplet.remove();
+            }, 2000);
+        }
+
+
+        setInterval(createDroplet, 300);
+
+    </script>
+
+    <script src="snow.js"></script>
+</body>
+
+</html>
